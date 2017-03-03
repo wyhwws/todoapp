@@ -90,7 +90,7 @@ public class TaskDetailFragment extends Fragment implements TaskDetailContract.V
         mDetailCompleteStatus = (CheckBox) root.findViewById(R.id.task_detail_complete);
         mImageView = (ImageView)root.findViewById(R.id.iv_image);
         final Bitmap bitmap = BitmapFactory.decodeFile(mDetailImage.getText().toString());
-        mImageView.setImageBitmap(bitmap);
+       // mImageView.setImageBitmap(bitmap);
         // Set up floating action button
         FloatingActionButton fab =
                 (FloatingActionButton) getActivity().findViewById(R.id.fab_edit_task);
