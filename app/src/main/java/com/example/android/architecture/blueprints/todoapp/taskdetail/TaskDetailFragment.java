@@ -18,6 +18,8 @@ package com.example.android.architecture.blueprints.todoapp.taskdetail;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -32,6 +34,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android.architecture.blueprints.todoapp.R;
@@ -57,7 +60,7 @@ public class TaskDetailFragment extends Fragment implements TaskDetailContract.V
     private TextView mDetailTitle;
 
     private TextView mDetailDescription;
-
+    private ImageView mImageView;
     private TextView mDetailImage;
     private CheckBox mDetailCompleteStatus;
 
@@ -85,7 +88,9 @@ public class TaskDetailFragment extends Fragment implements TaskDetailContract.V
         mDetailDescription = (TextView) root.findViewById(R.id.task_detail_description);
         mDetailImage = (TextView) root.findViewById(R.id.task_detail_image);
         mDetailCompleteStatus = (CheckBox) root.findViewById(R.id.task_detail_complete);
-
+        mImageView = (ImageView)root.findViewById(R.id.iv_image);
+        final Bitmap bitmap = BitmapFactory.decodeFile(mDetailImage.getText().toString());
+        mImageView.setImageBitmap(bitmap);
         // Set up floating action button
         FloatingActionButton fab =
                 (FloatingActionButton) getActivity().findViewById(R.id.fab_edit_task);
