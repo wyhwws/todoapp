@@ -236,7 +236,7 @@ public class AddEditTaskFragment extends Fragment implements AddEditTaskContract
                     public void run() {
                         mImageView.setImageBitmap(bitmap);
                         mTvPath.setText(builder.toString());
-                        mImage.setText(builder.toString());
+                        mImage.setText(file.toString());
                     }
                 });
             }

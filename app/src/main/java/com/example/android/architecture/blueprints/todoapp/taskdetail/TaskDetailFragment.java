@@ -125,6 +125,7 @@ public class TaskDetailFragment extends Fragment implements TaskDetailContract.V
         if (active) {
             mDetailTitle.setText("");
             mDetailDescription.setText(getString(R.string.loading));
+            mDetailImage.setText(getString(R.string.loading));
         }
     }
 
@@ -145,7 +146,7 @@ public class TaskDetailFragment extends Fragment implements TaskDetailContract.V
     }
     @Override
     public void hideImage() {
-        mDetailTitle.setVisibility(View.GONE);
+        mDetailImage.setVisibility(View.GONE);
     }
 
     @Override
